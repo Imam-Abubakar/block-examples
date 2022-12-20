@@ -4,7 +4,7 @@ const { ethers } = require("ethers"); //Getting the Ethers.js module
 // GETTING PROVIDER(s)
 const provider = new ethers.providers.JsonRpcProvider(`https://dataserver-1.zenithchain.co/`)
 
-// ABI of the ERC20 token contract
+// ABI of a ZEN-20 token contract
 const ZEN20ABI = [
     {
         "constant": true,
@@ -64,7 +64,7 @@ const getZen20Bal = async () => {
     let astronoAmount = await astronoContract.balanceOf(address);
     const astronoBalance = ethers.utils.formatEther(astronoAmount)
 
-    console.log(`======= READING ALL TOKEN BALANCE FOR ADDRESS (${address}) ====== \n`)
+    console.log(`======= READING ALL TOKEN BALANCES FOR ADDRESS (${address}) ====== \n`)
     console.log(`ZENITH  ====> ${zenithBal} ZENITH \n`)
     console.log(`BUSD ====> ${busdBalance} BUSD \n`)
     console.log(`Wrapped ZENITH ====> ${wZenithBalance} WZENITH \n`)
